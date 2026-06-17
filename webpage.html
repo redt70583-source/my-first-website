@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Mulch & Topsoil Calculator | Yardage Estimator</title>
+    <meta name="description" content="Calculate exactly how many cubic yards of mulch, soil, or gravel you need for your landscaping project.">
+    <!-- Tailwind CSS via CDN for automated, zero-maintenance styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Simple Top Header -->
+    <header class="bg-white border-b border-slate-200 py-4 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <span class="font-black text-xl tracking-tight text-emerald-700">YARDAGE<span class="text-slate-400">CALC</span></span>
+            <span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">100% Free Utility</span>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="max-w-4xl mx-auto px-4 py-12 flex-grow w-full">
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- LEFT 2 COLUMNS: The Calculator App -->
+            <div class="md:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h1 class="text-2xl font-bold text-slate-900 tracking-tight mb-2">Mulch & Soil Material Calculator</h1>
+                <p class="text-sm text-slate-500 mb-6">Enter your area dimensions and desired material depth to calculate total cubic yards needed.</p>
+                
+                <form id="calc-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Length of Area (Feet)</label>
+                        <input type="number" id="length" required min="1" placeholder="e.g. 20" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:outline-none transition font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Width of Area (Feet)</label>
+                        <input type="number" id="width" required min="1" placeholder="e.g. 10" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:outline-none transition font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Desired Depth (Inches)</label>
+                        <select id="depth" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-emerald-500 focus:outline-none transition font-medium">
+                            <option value="1">1 Inch (Light refreshing)</option>
+                            <option value="2">2 Inches (Standard mulch cover)</option>
+                            <option value="3" selected>3 Inches (Best weed suppression)</option>
+                            <option value="4">4 Inches (Heavy coverage)</option>
+                            <option value="6">6 Inches (Deep bedding/Playgrounds)</option>
+                        </select>
+                    </div>
+                </form>
+
+                <!-- Results Output Block -->
+                <div class="mt-8 p-6 bg-emerald-50 rounded-xl border border-emerald-200/60 text-center">
+                    <span class="text-xs uppercase tracking-widest text-emerald-800 font-bold">Estimated Material Required</span>
+                    <div class="text-4xl font-black text-emerald-900 my-2"><span id="result-yards">0.00</span> <span class="text-xl font-normal text-emerald-700">Cubic Yards</span></div>
+                    <p class="text-xs text-emerald-700/80">Equivalent to roughly <span id="result-bags" class="font-bold">0</span> standard 2-cubic-foot bags.</p>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Monetization Space (Passive Income Engine) -->
+            <div class="space-y-6">
+                <!-- Ad Placeholder Block (Set it and forget it) -->
+                <div class="bg-slate-100 border border-slate-200 rounded-2xl p-4 text-center min-h-[250px] flex flex-col justify-center items-center">
+                    <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400 block mb-2">Sponsored Advertisement</span>
+                    <!-- Paste your Google AdSense or Ezoic script snippet below when approved -->
+                    <div class="text-xs text-slate-400 font-medium italic p-4 border-2 border-dashed border-slate-200 rounded-lg bg-white w-full h-full flex items-center justify-center">
+                        [AdSense Automated Script Runs Here]
+                    </div>
+                </div>
+
+                <!-- Hands-off Affiliate Income Links -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Recommended Project Tools</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li>
+                            <a href="https://amzn.to/YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="group block p-2 rounded-lg hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                                <div class="font-semibold text-slate-900 group-hover:text-emerald-700">Heavy Duty Landscape Fabric &rarr;</div>
+                                <div class="text-xs text-slate-500">Stop weeds before laying down your new mulch layout.</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://amzn.to/YOUR_AFFILIATE_ID" target="_blank" rel="nofollow" class="group block p-2 rounded-lg hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                                <div class="font-semibold text-slate-900 group-hover:text-emerald-700">Ergonomic Poly Scoop Shovel &rarr;</div>
+                                <div class="text-xs text-slate-500">The perfect ultra-lightweight scoop shape designed for bulk aggregate.</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Simple Stationary Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>&copy; 2026 YardageCalc. All computing metrics completely open source.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:underline">Privacy Framework</a>
+                <a href="#" class="hover:underline">Terms of Utility</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Zero-Overhead Vanilla JavaScript Calculation Logic -->
+    <script>
+        const lengthInput = document.getElementById('length');
+        const widthInput = document.getElementById('width');
+        const depthInput = document.getElementById('depth');
+        
+        const resultYards = document.getElementById('result-yards');
+        const resultBags = document.getElementById('result-bags');
+
+        function calculateMaterial() {
+            const length = parseFloat(lengthInput.value) || 0;
+            const width = parseFloat(widthInput.value) || 0;
+            const depthInches = parseFloat(depthInput.value) || 0;
+
+            if (length > 0 && width > 0) {
+                // Formula: (Length ft * Width ft * (Depth in / 12)) / 27 = Cubic Yards
+                const depthFeet = depthInches / 12;
+                const cubicFeet = length * width * depthFeet;
+                const cubicYards = cubicFeet / 27;
+
+                // Standard mulch bags are usually 2 cubic feet
+                const totalBags = Math.ceil(cubicFeet / 2);
+
+                // Update UI instantly
+                resultYards.innerText = cubicYards.toFixed(2);
+                resultBags.innerText = totalBags.toLocaleString();
+            } else {
+                resultYards.innerText = "0.00";
+                resultBags.innerText = "0";
+            }
+        }
+
+        // Listen for user keystrokes to update data in real-time
+        lengthInput.addEventListener('input', calculateMaterial);
+        widthInput.addEventListener('input', calculateMaterial);
+        depthInput.addEventListener('change', calculateMaterial);
+    </script>
+</body>
+</html>
